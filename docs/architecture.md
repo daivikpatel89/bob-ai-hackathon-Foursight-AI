@@ -4,6 +4,9 @@
 
 [Describe the overall architecture of your system. Replace the Mermaid diagram below with your actual architecture.]
 
+
+## Scalability Notes
+
 ```mermaid
 graph TD
     %% Architecture Layers
@@ -18,13 +21,8 @@ graph TD
     
     Copilot --> Scheduler[Scheduling Engine]
     Scheduler --> Dashboard[Web Dashboard]
+```
 
-
-## Scalability Notes
-
-[Optional: how would this scale beyond the hackathon prototype?]
-
-[e.g., "The FastAPI backend is stateless and could be horizontally scaled behind a load balancer. The watsonx.ai calls are the bottleneck and would benefit from request batching."]
 
 ## Components
 
