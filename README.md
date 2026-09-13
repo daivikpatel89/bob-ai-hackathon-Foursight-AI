@@ -1,121 +1,68 @@
-# 🚀 [Your Project Title Here]
-
-> ⚠️ **Replace everything in `[ ]` brackets with your actual content before submission.**
-
----
+# 🛡️ Aegis-HUMS: AI-Driven Military Vehicle Health & Usage Monitoring System
 
 ## 👥 Team
 
 | Field | Value |
-|---|---|
-| **Team Name** | [Your Team Name] |
-| **Track** | [AI / DevOps / Sustainability / Open] |
-| **Team Lead** | [Name] — [email@ibm.com] |
-| **Members** | [Name 1], [Name 2], [Name 3] |
+| :--- | :--- |
+| **Team Name** | Foursight AI |
+| **Track** | D1: Defense & Aerospace |
+| **Team Lead** | Medha Raychura — medha@example.com |
+| **Members** | Daivik Patel, Divy Panchal, Siddhi |
 
 ---
 
 ## 🎯 Problem Statement
 
-> In 2–3 sentences: What problem does your project solve? Who experiences this problem?
-
-[Describe the real-world problem your project addresses. Be specific about who the user is and what pain point they face.]
+Base commanders and field mechanics face immense operational friction when military vehicle sensors trigger complex diagnostic faults. Without immediate, centralized insights, critical repair decisions are delayed, directly compromising mission readiness and asset longevity in the field.
 
 ---
 
 ## 💡 Solution
 
-> In 2–3 sentences: What did you build? How does it solve the problem above?
-
-[Describe your solution clearly. Explain the core mechanism — what makes it work.]
+Aegis-HUMS is an advanced, AI-powered Health and Usage Monitoring System dashboard built with Streamlit and Python. It integrates a high-performance C++ telemetry generator with the **IBM watsonx Granite 3.0** model (`ibm/granite-3-3-8b-instruct`) to translate raw sensor matrices into instant, authoritative, mission-ready maintenance work orders and executive fleet briefings.
 
 ---
 
 ## ✨ Key Features
 
-- **Feature 1:** [Brief description — e.g., "Real-time anomaly detection using watsonx.ai"]
-- **Feature 2:** [Brief description]
-- **Feature 3:** [Brief description]
-- **Feature 4:** [Optional]
-- **Feature 5:** [Optional]
+* **Fleet Risk Scoring**: Real-time multi-variable prioritization calculating risk indices from status, temperature, and vibration telemetry.
+* **Granite 3.0 AI Explanations**: On-demand per-vehicle diagnostics and fleet-level summaries scoped specifically for a military maintenance commander persona.
+* **High-Speed C++ Engine**: Optimized sensor simulation handling thousands of telemetry rows instantly to ensure low-latency dashboard performance.
+* **Interactive Telemetry Analytics**: Visual trend graphs tracking engine temperature and component vibration thresholds over time.
+* **Production-Ready Configuration**: Secure environment management utilizing `.env` secrets and modular client architecture.
 
 ---
 
 ## 🛠️ Tech Stack
 
 | Category | Technologies |
-|---|---|
-| **Languages** | [e.g., Python, TypeScript] |
-| **Frameworks** | [e.g., FastAPI, React] |
-| **IBM Technologies** | [e.g., watsonx.ai, IBM Bob, IBM Cloud] |
-| **Databases** | [e.g., PostgreSQL, Redis] |
-| **Other** | [e.g., Docker, GitHub Actions] |
-
----
-
-## 📁 Repository Structure
-
-```
-├── src/                  # All source code
-├── docs/                 # Written documentation
-│   ├── problem-statement.md
-│   ├── solution-overview.md
-│   ├── architecture.md
-│   └── setup-guide.md
-├── demo/                 # Demo artifacts
-│   ├── screenshots/      # App screenshots
-│   └── demo-video-link.txt  # Link to demo video
-├── presentation/         # Slide deck
-└── submission.yaml       # Structured submission metadata
-```
+| :--- | :--- |
+| **Languages** | Python, C++ |
+| **Frameworks** | Streamlit, Pandas |
+| **IBM Technologies** | watsonx.ai (Granite 3.0 Model), IBM Bob SDK |
+| **Databases / Storage** | Local CSV Telemetry (`data/hums_data.csv`) |
+| **Other** | GNU GCC, Git, GitHub Actions, Python Dotenv |
 
 ---
 
 ## ⚡ How to Run
 
-> **Copy these exact steps from your [`docs/setup-guide.md`](docs/setup-guide.md)**
-
 ```bash
-# 1. Clone the repo
-git clone https://github.com/[your-repo].git
-cd [your-repo]
+# 1. Clone the repository
+git clone [https://github.com/patelsiddhi07-it/bob-ai-hackathon-Foursight-AI.gif](https://github.com/patelsiddhi07-it/bob-ai-hackathon-Foursight-AI.gif)
+cd bob-ai-hackathon-Foursight-AI
 
 # 2. Install dependencies
-[your install command here]
+pip install -r src/requirements.txt
 
-# 3. Configure environment
-cp .env.example .env
-# Edit .env with your values
+# 3. Configure environment variables
+cp src/.env.example src/.env
+# (Add your IBM watsonx API key and project ID into src/.env)
 
-# 4. Run the project
-[your run command here]
-```
+# 4. Generate sensor telemetry using C++
+mkdir -p data
+g++ -std=c++17 -O2 -o hums_gen src/hums_gen.cpp
+./hums_gen --rows 5000 --vehicles 20 --output data/hums_data.csv
 
----
-
-## 🖥️ Demo
-
-| Artifact | Link |
-|---|---|
-| 📹 Demo Video | [See demo/demo-video-link.txt](demo/demo-video-link.txt) |
-| 🌐 Live Demo | [See demo/live-demo-url.txt](demo/live-demo-url.txt) |
-| 🖼️ Screenshots | [See demo/screenshots/](demo/screenshots/) |
-| 📊 Presentation | [See presentation/slides.pdf](presentation/) |
-
----
-
-## ⚠️ Known Limitations
-
-> Be honest — judges appreciate transparency over overclaiming.
-
-- [Limitation 1: e.g., "Authentication is mocked — not production-ready"]
-- [Limitation 2: e.g., "Only tested on Chrome"]
-- [Limitation 3: e.g., "Feature X is scaffolded but not fully implemented"]
-
----
-
-## 🏅 What We're Most Proud Of
-
-[Tell the judges what part of your submission is strongest and worth paying close attention to.]
-
----
+# 5. Launch the Streamlit dashboard
+streamlit run src/app.py -- --csv data/hums_data.csv
