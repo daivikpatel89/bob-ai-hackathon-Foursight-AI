@@ -1,42 +1,6 @@
-#include <iostream>
-#include <fstream>
-#include <iomanip>
-#include <vector>
-#include <string>
-#include <random>
-
-int main() {
-    std::ofstream outfile("data/hums_data2.csv");
-    outfile << "vehicle_id,latest_status,latest_temp_c,latest_vibration_mm_s,total_run_hours,fault_count,warning_count,service_due,composite_score\n";
-
-    std::mt19937 rng(42);
-    std::uniform_real_distribution<double> temp_normal(75.0, 95.0);
-    std::uniform_real_distribution<double> vib_normal(2.0, 5.5);
-
-    for (int i = 1; i <= 20; ++i) {
-        char id_buf[16];
-        snprintf(id_buf, sizeof(id_buf), "VH-%04d", i);
-        std::string vid(id_buf);
-
-        double temp = temp_normal(rng);
-        double vib = vib_normal(rng);
-        int faults = 0;
-        int warnings = 0;
-        std::string status = "NORMAL";
-        bool svc_due = false;
-        double score = 0.0;
-
-        outfile << vid << ","
-                << status << ","
-                << std::fixed << std::setprecision(1) << temp << ","
-                << std::fixed << std::setprecision(2) << vib << ","
-                << std::fixed << std::setprecision(1) << (200.0 * i) << ","
-                << faults << ","
-                << warnings << ","
-                << (svc_due ? "1" : "0") << ","
-                << std::fixed << std::setprecision(1) << score << "\n";
-    }
-    outfile.close();
-    std::cout << "Generated data/hums_data2.csv with all 0-error vehicles.\n";
-    return 0;
-}
+vehicle_id,timestamp,engine_temp_c,vibration_mm_s,oil_pressure_psi,error_code,status
+V001,2026-09-15 08:00:00,88.2,3.1,45.0,NONE,OK
+V002,2026-09-15 08:01:00,90.1,2.8,44.5,NONE,OK
+V003,2026-09-15 08:02:00,87.5,3.0,46.0,NONE,OK
+V004,2026-09-15 08:03:00,89.0,2.9,45.2,NONE,OK
+V005,2026-09-15 08:04:00,88.7,3.2,44.8,NONE,OK
