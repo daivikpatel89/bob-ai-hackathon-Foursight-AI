@@ -1,62 +1,6 @@
-#include <iostream>
-#include <fstream>
-#include <iomanip>
-#include <vector>
-#include <string>
-#include <random>
-
-int main() {
-    std::ofstream outfile("data/hums_data1.csv");
-    outfile << "vehicle_id,latest_status,latest_temp_c,latest_vibration_mm_s,total_run_hours,fault_count,warning_count,service_due,composite_score\n";
-
-    std::mt19937 rng(42);
-    std::uniform_real_distribution<double> temp_normal(75.0, 95.0);
-    std::uniform_real_distribution<double> vib_normal(2.0, 5.5);
-    std::uniform_real_distribution<double> temp_error(125.0, 145.0);
-    std::uniform_real_distribution<double> vib_error(15.0, 22.0);
-
-    for (int i = 1; i <= 20; ++i) {
-        char id_buf[16];
-        snprintf(id_buf, sizeof(id_buf), "VH-%04d", i);
-        std::string vid(id_buf);
-
-        double temp, vib;
-        int faults, warnings;
-        std::string status;
-        bool svc_due;
-        double score;
-
-        if (i <= 4) {
-            // Vehicles 1 to 4: 0 errors (clean state)
-            temp = temp_normal(rng);
-            vib = vib_normal(rng);
-            faults = 0;
-            warnings = 0;
-            status = "NORMAL";
-            svc_due = false;
-            score = 0.0;
-        } else {
-            // Vehicles 5 to 20: Full of errors / critical state
-            temp = temp_error(rng);
-            vib = vib_error(rng);
-            faults = 2 + (i % 3);
-            warnings = 1 + (i % 2);
-            status = "CRITICAL";
-            svc_due = true;
-            score = 75.0 + (i % 25);
-        }
-
-        outfile << vid << ","
-                << status << ","
-                << std::fixed << std::setprecision(1) << temp << ","
-                << std::fixed << std::setprecision(2) << vib << ","
-                << std::fixed << std::setprecision(1) << (200.0 * i) << ","
-                << faults << ","
-                << warnings << ","
-                << (svc_due ? "1" : "0") << ","
-                << std::fixed << std::setprecision(1) << score << "\n";
-    }
-    outfile.close();
-    std::cout << "Generated CSV with vehicles 1-4 clean and 5-20 with errors.\n";
-    return 0;
-}
+vehicle_id,timestamp,engine_temp_c,vibration_mm_s,oil_pressure_psi,error_code,status
+V001,2026-09-15 08:00:00,118.5,14.2,15.1,ERR_OVERHEAT,CRITICAL
+V002,2026-09-15 08:01:00,112.0,16.8,11.4,ERR_OIL_LOW,CRITICAL
+V003,2026-09-15 08:02:00,124.1,19.5,14.0,ERR_VIB_HIGH,WARNING
+V004,2026-09-15 08:03:00,105.8,11.2,18.9,ERR_SENSOR_FAIL,CRITICAL
+V005,2026-09-15 08:04:00,130.0,22.0,9.5,ERR_CRITICAL_FAILURE,CRITICAL
