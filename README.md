@@ -87,7 +87,7 @@ cp .env.example .env
 
 | Artifact | Link |
 |---|---|
-| 📹 Demo Video | [See demo/demo-video-link.txt](demo/demo-video-link.txt) |
+| 📹 Demo Video | [See demo/demo-video-link.txt](https://www.youtube.com/watch?v=ViHbFZYjBk4) |
 | 🌐 Live Demo | [See demo/live-demo-url.txt](demo/live-demo-url.txt) |
 | 🖼️ Screenshots | [See demo/screenshots/](demo/screenshots/) |
 | 📊 Presentation |[See presentation/slides.pdf]  
