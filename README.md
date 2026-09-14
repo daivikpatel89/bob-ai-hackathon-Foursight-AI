@@ -90,7 +90,7 @@ cp .env.example .env
 | 📹 Demo Video | [See demo/demo-video-link.txt](demo/demo-video-link.txt) |
 | 🌐 Live Demo | [See demo/live-demo-url.txt](demo/live-demo-url.txt) |
 | 🖼️ Screenshots | [See demo/screenshots/](demo/screenshots/) |
-| 📊 Presentation | [See presentation/slides.pdf](https://1drv.ms/p/c/104E1C5EA0F649F6/IQB8rwe5uB2ATrozkMKlbTxoAQkK5zrimOaTg3rdPhQLlYU?e=tg2d2J) |
+| 📊 Presentation | [See presentation/slides.pdf](https://onedrive.live.com/:p:/g/personal/104E1C5EA0F649F6/IQB8rwe5uB2ATrozkMKlbTxoAQkK5zrimOaTg3rdPhQLlYU?resid=104E1C5EA0F649F6!sb907af7c1db84e80ba3390c2a56d3c68&ithint=file%2Cpptx&e=qFDv77&migratedtospo=true&redeem=aHR0cHM6Ly8xZHJ2Lm1zL3AvYy8xMDRFMUM1RUEwRjY0OUY2L0lRQjhyd2U1dUIyQVRyb3prTUtsYlR4b0FRa0s1enJpbU9hVGczcmRQaFFMbFlVP2U9cUZEdjc3) |
 
 ---
 
