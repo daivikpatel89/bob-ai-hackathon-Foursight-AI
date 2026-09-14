@@ -1,6 +1,4 @@
-# 🚀 [Your Project Title Here]
-
-> ⚠️ **Replace everything in `[ ]` brackets with your actual content before submission.**
+# 🚀 FourSight AI — Mission Readiness & Predictive Maintenance Copilot
 
 ---
 
@@ -8,36 +6,29 @@
 
 | Field | Value |
 |---|---|
-| **Team Name** | [Your Team Name] |
-| **Track** | [AI / DevOps / Sustainability / Open] |
-| **Team Lead** | [Name] — [email@ibm.com] |
-| **Members** | [Name 1], [Name 2], [Name 3] |
+| **Team Name** | FourSight AI  |
+| **Track** | AI|
+| **Team Lead** | Medha Raychura— medharaychura13@gmail.com |
+| **Members** | Daivik patel, Divy Panchal, Patel Siddhi |
 
 ---
 
 ## 🎯 Problem Statement
 
-> In 2–3 sentences: What problem does your project solve? Who experiences this problem?
-
-[Describe the real-world problem your project addresses. Be specific about who the user is and what pain point they face.]
-
+> Military organizations need to reliably determine whether aircraft and other equipment are mission-ready, but maintenance is often based on fixed schedules rather than the actual condition of each asset. This can lead to unexpected equipment failures and reduced operational readiness. FourSight AI analyzes sensor data and service records to identify non-ready assets, explain readiness issues, and help maintenance teams act before critical failures occur.
 ---
-
 ## 💡 Solution
 
-> In 2–3 sentences: What did you build? How does it solve the problem above?
-
-[Describe your solution clearly. Explain the core mechanism — what makes it work.]
-
+> FourSight AI is an AI-powered mission readiness and predictive maintenance copilot that analyzes equipment sensor data and service records to assess asset readiness and identify potential maintenance issues. It explains the reasons behind each readiness status, predicts components that may fail before the next mission window, and generates a prioritized maintenance plan so maintenance teams can take action proactively.
 ---
 
 ## ✨ Key Features
 
-- **Feature 1:** [Brief description — e.g., "Real-time anomaly detection using watsonx.ai"]
-- **Feature 2:** [Brief description]
-- **Feature 3:** [Brief description]
-- **Feature 4:** [Optional]
-- **Feature 5:** [Optional]
+- **Feature 1:** **Mission Readiness Assessment** — Automatically classifies each asset as Ready, At Risk, or Not Ready based on sensor data and service records.
+- **Feature 2:** **Explainable Readiness Analysis** — Clearly explains the key sensor abnormalities, maintenance history, and other factors affecting an asset's readiness status.
+- **Feature 3:** **Predictive Failure Detection** — Identifies components at risk of failure before the next mission window using equipment condition and historical maintenance data.
+- **Feature 4:** **Prioritized Maintenance Plan** — Recommends maintenance actions and prioritizes assets based on failure risk and mission-readiness impact.
+- **Feature 5:** **Mission Readiness Dashboard** — Provides a centralized view of asset health, readiness status, risk levels, predicted failures, and recommended actions.
 
 ---
 
@@ -45,12 +36,11 @@
 
 | Category | Technologies |
 |---|---|
-| **Languages** | [e.g., Python, TypeScript] |
-| **Frameworks** | [e.g., FastAPI, React] |
-| **IBM Technologies** | [e.g., watsonx.ai, IBM Bob, IBM Cloud] |
-| **Databases** | [e.g., PostgreSQL, Redis] |
-| **Other** | [e.g., Docker, GitHub Actions] |
-
+| **Languages** | Python, JavaScript, HTML, CSS |
+| **Frameworks** | FastAPI, React |
+| **IBM Technologies** | IBM Bob |
+| **Databases** | SQLite |
+| **Other** | Git, GitHub, GitHub Actions |
 ---
 
 ## 📁 Repository Structure
@@ -108,14 +98,15 @@ cp .env.example .env
 
 > Be honest — judges appreciate transparency over overclaiming.
 
-- [Limitation 1: e.g., "Authentication is mocked — not production-ready"]
-- [Limitation 2: e.g., "Only tested on Chrome"]
-- [Limitation 3: e.g., "Feature X is scaffolded but not fully implemented"]
+- **Hackathon MVP Scope:** The system is designed as a functional proof of concept and may require additional development and testing before production deployment.
+- **Dataset Dependency:** Prediction and readiness assessment quality depend on the availability, quality, and completeness of sensor and service-record data.
+- **Predictive Accuracy:** Failure predictions are intended to support maintenance decisions and should not be treated as a guaranteed prediction of equipment failure.
+- **Limited Real-World Validation:** The system will be evaluated using the available dataset and has not been validated on live military equipment or operational mission data.
 
 ---
 
 ## 🏅 What We're Most Proud Of
 
-[Tell the judges what part of your submission is strongest and worth paying close attention to.]
+**FourSight AI turns raw equipment condition and maintenance data into actionable mission-readiness intelligence. Instead of simply showing sensor values, our solution connects readiness assessment, explainable risk analysis, predictive failure detection, and prioritized maintenance recommendations in one copilot workflow.**
 
----
+We are especially proud of building the solution around the real operational challenge of **preventing unexpected equipment failures before a mission**, while keeping the system explainable so maintenance teams can understand *why* an asset is considered at risk and *what action should be prioritized*.
