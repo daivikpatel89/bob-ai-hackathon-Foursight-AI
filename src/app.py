@@ -270,8 +270,8 @@ def render_work_order_table(wo: pd.DataFrame) -> None:
     styled = (
         table.style
         .map(_colour_status,   subset=["Status"])
-        .applymap(_colour_priority, subset=["Priority"])
-        .applymap(_colour_score,    subset=["Risk Score"])
+        .map(_colour_priority, subset=["Priority"])
+        .map(_colour_score,    subset=["Risk Score"])
         .format({
             "Temp (°C)":        "{:.1f}",
             "Vibration (mm/s)": "{:.2f}",
