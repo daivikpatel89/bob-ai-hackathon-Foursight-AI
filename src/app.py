@@ -269,7 +269,7 @@ def render_work_order_table(wo: pd.DataFrame) -> None:
 
     styled = (
         table.style
-        .applymap(_colour_status,   subset=["Status"])
+        .map(_colour_status,   subset=["Status"])
         .applymap(_colour_priority, subset=["Priority"])
         .applymap(_colour_score,    subset=["Risk Score"])
         .format({
