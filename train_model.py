@@ -1,3 +1,4 @@
+
 import pandas as pd
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.model_selection import train_test_split
@@ -10,7 +11,8 @@ df = pd.read_csv('data/hums_data2.csv', on_bad_lines='skip')
 
 # 2. Define your exact column names based on your CSV:
 # If your CSV headers are spelled differently, please update them here!
-features = ['engine_temperature', 'vibration'] 
+
+features = ['engine_temp_c', 'vibration_mm_s'] 
 target = 'status'
 
 # Column validation check
